@@ -1,4 +1,4 @@
-# Programs used in "Diverse effect of reverse string operations on SMILES Notation on chemical structure"
+# Programs used in "Diverse change of chemical structures from reverse string operations on SMILES notation"
 
 ## Article Information
 ***
