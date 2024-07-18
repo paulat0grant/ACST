@@ -1,4 +1,4 @@
-# Programs used in "Diverse change of chemical structures from reverse string operations on SMILES notation"
+# Programs used in "Dextrosinistral Reading of SMILES Notation: Investigation into Origin of Non-Sense Code from String Manipulations"
 
 ## Article Information
 ***
