@@ -33,6 +33,27 @@ print(LEN1)
 
 ARRAY1 = list(STRING1)
 
+def swapPercentt(a, b, c):
+    d = a
+    a = c
+    c = d
+    return a, b, c
+
+def SwapPercent(arr):
+    i = 0
+    j = len(arr)
+    while i < j-1:
+                if arr[i] == '%':
+                    arr[i-2], arr[i-1], arr[i] = swapPercentt(arr[i-2], arr[i-1], arr[i])
+                    i = i + 1
+                else:
+                    i = i + 1
+                
+
+
+
+ARRAY2 = list(STRING1)
+
 def SwapPost(t):
     i = 0
     j = len(t)
@@ -42,17 +63,27 @@ def SwapPost(t):
     v = {}
     dd = 0
     while (i<j):
-        if t[i].isdigit():
+        if (t[i] == '%'):
+            u[k] = t[i]
+            k = k + 1
+            i = i + 1
+            while (t[i].isdigit()) or (t[i] == '%'):
+                u[k] = t[i]
+                k = k + 1
+                i = i + 1
+                if (i>j):
+                    break
+        elif t[i].isdigit():
             if t[i+1] == '-' or t[i+1] == '+':
                 i=i+1
                 continue
             else:
-                while (t[i].isdigit()):
+                while (t[i].isdigit()) or (t[i] == '%'):
                     u[k] = t[i]
                     k = k + 1
                     i = i + 1
                     if (i>j):
-                        break        
+                        break
             if t[i] == '[':
                 v[l] = t[i]
                 while (t[i]!=']'):
@@ -87,12 +118,14 @@ def SwapPost(t):
         dd = 0
         i=i+1
 
-SwapPost(ARRAY1)
+SwapPost(ARRAY2)
 
-STRING2 = ''.join(str(x) for x in ARRAY1)
+SwapPercent(ARRAY2)
+
+STRING3 = ''.join(str(x) for x in ARRAY2)
 
 print ("AFTER RING DIGIT REPOSITIONING, REVERSE SMILES NOTATION BECOME: ")
-print(STRING2)
+print(STRING3)
 
 ANS03 = 'NO'
 while ANS03 != 'YES':
@@ -111,7 +144,7 @@ while ANS04 != 'YES':
     print('YOU HAVE ENTERED:' + ANS04)
 
 with open(FILE2, mode='w', newline='') as f:
-    f.write(STRING2)
+    f.write(STRING3)
 
 print("STEP THREE: OPERATION RING DIGIT REPOSITIONING SUCCESSFULLY PERFORMED")
 
